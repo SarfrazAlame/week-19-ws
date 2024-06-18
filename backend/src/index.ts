@@ -39,11 +39,12 @@
 import WebSocket, { WebSocketServer } from 'ws';
 import http from 'http';
 
-const server = http.createServer(function(request: any, response: any) {
-    console.log((new Date()) + ' Received request for ' + request.url);
-    response.end("hi there");
+const server = http.createServer(function (request: any, response: any) {
+  console.log((new Date()) + ' Received request for ' + request.url);
+  response.end("hi there");
 });
 
+// creating websocker server instance
 const wss = new WebSocketServer({ server });
 
 let userCount = 0
@@ -62,6 +63,6 @@ wss.on('connection', function connection(ws) {
   ws.send('Hello! Message From Server!!');
 });
 
-server.listen(8080, function() {
-    console.log((new Date()) + ' Server is listening on port 8080');
+server.listen(8080, function () {
+  console.log((new Date()) + ' Server is listening on port 8080');
 });

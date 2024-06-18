@@ -49,6 +49,7 @@ const server = http_1.default.createServer(function (request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
     response.end("hi there");
 });
+// creating websocker server instance
 const wss = new ws_1.WebSocketServer({ server });
 let userCount = 0;
 wss.on('connection', function connection(ws) {

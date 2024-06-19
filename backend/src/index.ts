@@ -60,7 +60,6 @@ wss.on('connection', function connection(ws) {
   });
   console.log("user connnected ", ++userCount)
 
-  ws.send('Hello! Message From Server!!');
 });
 
 server.listen(8080, function () {
